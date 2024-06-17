@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react';
-import Contents from './Contents.js';
 
 function App() {
 
@@ -32,8 +31,6 @@ function App() {
       <div className="logo">
         { logo }
       </div>
-
-      <Contents/>
 
     </div>
   );
