@@ -32,7 +32,7 @@ function App() {
       <div className="logo">
         { logo }
       </div>
-
+    테스트
       <Contents/>
 
     </div>
