@@ -6,7 +6,6 @@ div {
   box-sizing: border-box;
 }
 
-
 .black-nav {
   background: #000;
   padding: 1rem;
@@ -24,5 +23,158 @@ div {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@font-face {
+  font-family: 'AppleSDGothicNeoM';
+  src: url('./assets/font/AppleSDGothicNeoM.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('./assets/font/JetBrainsMono/JetBrainsMonoItalic400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/font/roboto/Roboto-Regular.eot");  
+  src: url("./assets/font/roboto/Roboto-Regular.eot?#iefix") format("embedded-opentype"), 
+  url("./assets/font/roboto/Roboto-Regular.woff") format("woff");
+  src: url("./assets/font/roboto/Roboto-Regular.otf") format("otf");  
+  src: url('./assets/font/roboto/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal; 
+  font-style: normal; 
+}
+
+:root {
+  --url-sprite: '../img/';
+  --font-size: 0.875rem;
+  --card: #283046;
+  --card-shadow: 0 4px 25px 0 rgb(180 183 189 / 10%);
+  --main-color: #06bee1;
+  --light-color: #08bee1;
+  --dark-color: #0e9dbd;
+  --fade-color: #06bee11f;
+  --main-color-gradient: linear-gradient(118deg,#06bee1,#06bee1b3);
+  --main-color-shadow: 0 0 10px 1px rgb(6 190 225 / 70%);
+  --font-color-light: #fff;
+  --font-color: #999; 
+  --font-color-down: #b4b7bd;
+  --font-color-dark: #a2a5ab;
+  --font-color-fade: #8d8d8d;
+  --font-sidebar : #e0ffff; 
+  --table-header: #343d55;
+  --table-color: #242b3d;
+  --border-color: #404656;
+  --background: #161d31;
+  --red: #e71f1f;
+  --blue: #3d7eff;
+  --grey: #82868b;
+  --green: #1ed624;
+  --gold:  #ffd700;
+  --border-radius: 20px; 
+}
+
+.light {
+  --url-sprite: '../img/';
+  --font-size: 0.875rem;
+  --card: #ffffff;
+  --card-shadow: 0 4px 25px 0 rgb(180 183 189 / 10%);
+  --main-color: #06bee1;
+  --light-color: #0e9dbd;
+  --dark-color: #08bee1;
+  --fade-color: #11b2d091;
+  --main-color-gradient: linear-gradient(118deg,#06bee1,#06bee1b3);
+  --main-color-shadow: 0 0 10px 1px rgb(6 190 225 / 70%);
+  --font-color-light: #191919;
+  --font-color: #5e5873;
+  --font-color-down: #6e6b7b;
+  --font-color-dark: #7a6c6c;
+  --font-color-fade: #c9c9c9;
+  --font-sidebar : #000;  
+  --table-header: #bfe2ef;
+  --table-color: #e3e5ea;
+  --border-color: #d8d6de;
+  --background: #eee;
+}
+::-webkit-scrollbar {
+  padding: 0;
+  width: 6px;
+  background: var(--font-color-fade);
+}
+
+::-webkit-scrollbar-thumb {
+  padding: 0 0;
+  background: var(--main-color);
+  height: 100px;
+  border-radius: 4px;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--backround);
+}
+
+::placeholder {
+  transition: text-indent 0.3s;
+  font-size: 0.85rem;
+  color: var(--font-color-dark);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, 
+body {
+  margin: 0;
+  padding: 0;
+  letter-spacing: .01rem;
+  font-size: var(--font-size);
+  color: var(--font-color);
+  font-family: "AppleSDGothicNeoM";
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+a {
+  color: var(--font-color);
+  text-decoration: none;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+button:focus-visible {
+  outline: unset;
+}
+
+textarea {
+  resize: none;
+}
+
+.content {
+  position: relative; 
+  animation: fade 0.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
