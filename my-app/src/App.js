@@ -1,40 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-import {useState} from 'react';
-import Contents from './Contents.js';
+import "./App.css";
+
+import Page from "./pages/Page";
+
+import { useState } from "react";
+
+import { ThemeContext } from "./context/ThemeContext";
+import { UserContext } from "./context/UserContext";
 
 function App() {
-
-  let post = '글 제목'
-  let [글제목 , b] = useState('남자 여름 옷');
-
-  let num = [1, 2, 3];
-
-  let a = num[0];
-  let c = num[1];
-
-  let [ logo, setLogo ] = useState('ReactBlog');
+  const [dark, setDark] = useState(false);
+  const [userData, setUserData] = useState("");
 
   return (
-    <div className="App">
-      <div className="black-nav">
-        <h2 style={{color : '#fff', fontSize : '2rem'}} id={post}> 블로그임 </h2>
-      </div>
-      
-      <div className="list">
-        <h2> { post } </h2>
-        <p>6월 17일 발행</p>
-        <p>{ a }</p>
-        <p>{ b }</p>
-        <p>{ c }</p>
-      </div>
-
-      <div className="logo">
-        { logo }
-      </div>
-
-      <Contents/>
-
+    <div className={dark ? "dark-theme App" : "App"}>
+      <UserContext.Provider value={{ userData, setUserData }}>
+        {/* 
+         <ThemeContext.Provider> 로 감싸준 모든 하위 컴포넌트들은 value 로 넣어준 dark 와 setDark에 접근할 수 있게 된다! 
+         */}
+        <ThemeContext.Provider value={{ dark, setDark }}>
+          <Page />
+        </ThemeContext.Provider>
+      </UserContext.Provider>
     </div>
   );
 }
