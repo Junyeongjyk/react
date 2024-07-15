@@ -4,7 +4,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.6);   ///배경에 픽스를 주고 투명도를 준다.
+    background: rgba(0, 0, 0, 0.6);  
   >
     .loginModal {
       width: 480px;
@@ -14,7 +14,7 @@
       box-sizing: border-box;
       margin: 50px auto;
       padding: 20px;
-      background: #fff;      //로그인 배경이다 
+      background: #fff;      
   >
       .close {
         float: right;
