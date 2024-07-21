@@ -6,6 +6,9 @@ import LoadingSpinner from './utils/Loading'; // 로딩 스피너 컴포넌트�
 import { Route, Routes } from 'react-router-dom';
 import BoardList from "./routes/BoardList";
 import Home from "./routes/Home";
+import Header from './layout/Header';
+import Dashboard from './layout/Dashboard';
+import Footer from './layout/Footer';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,10 +27,15 @@ function App() {
       {isLoading ? (
         <LoadingSpinner />
       ) : (
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/board" element={<BoardList />} />
-        </Routes>
+        <>
+          <Header />
+          <Dashboard />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/board" element={<BoardList />} />
+          </Routes>
+          <Footer />
+        </>
       )}
     </div>
   );
